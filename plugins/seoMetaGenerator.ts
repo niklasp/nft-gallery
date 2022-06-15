@@ -84,7 +84,7 @@ export default function ({ app }, inject): void {
       type === MediaType.VIDEO && {
         hid: 'og:video',
         property: 'og:video',
-        content: meta?.video,
+        content: `${meta?.video}?mime=${meta?.mime}`,
       },
       type === MediaType.VIDEO && {
         hid: 'og:video:type',
