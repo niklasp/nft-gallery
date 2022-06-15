@@ -36,7 +36,8 @@ export default function ({ app }, inject): void {
   const seoMeta = (meta: MetaProperties): MetaInfo['meta'] => {
     const baseUrl: string = app.$config.baseUrl
     const title = 'KodaDot - Kusama NFT Market Explorer'
-    const description = 'Creating Carbonless NFTs on Kusama'
+    let description = 'Creating Carbonless NFTs on Kusama'
+    description = meta?.description?.slice?.(0, 170) || description
     const image = `${baseUrl}/kodadot_card_root.png`
     const type = resolveMedia(meta?.mime)
 
@@ -49,7 +50,7 @@ export default function ({ app }, inject): void {
       {
         hid: 'description',
         name: 'description',
-        content: meta?.description || description,
+        content: description,
       },
       {
         hid: 'og:type',
@@ -69,7 +70,7 @@ export default function ({ app }, inject): void {
       {
         hid: 'og:description',
         property: 'og:description',
-        content: meta?.description || description,
+        content: description,
       },
       {
         hid: 'og:image',
@@ -104,7 +105,7 @@ export default function ({ app }, inject): void {
       {
         hid: 'twitter:description',
         name: 'twitter:description',
-        content: meta?.description || description,
+        content: description,
       },
       {
         hid: 'twitter:image',
