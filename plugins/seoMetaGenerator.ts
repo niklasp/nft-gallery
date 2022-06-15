@@ -24,9 +24,7 @@ export default function ({ app }, inject): void {
   const getMetaType = (mediaType: MediaType | string | undefined): string => {
     switch (mediaType) {
       case MediaType.VIDEO:
-        return 'video:other'
       case MediaType.AUDIO:
-        return 'music:song'
       case MediaType.IMAGE:
       case MediaType.JSON:
       case MediaType.OBJECT:
