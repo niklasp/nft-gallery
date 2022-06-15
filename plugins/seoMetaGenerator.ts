@@ -112,13 +112,20 @@ export default function ({ app }, inject): void {
         name: 'twitter:image',
         content: meta?.image || image,
       },
-      // here you should add a link to a route where the video is embedded
+      // here you should add a link to a route where the video is embedded and add only
+      // when type isvideo instead of summary_large_image
+      // also you will need to add video dimensions or do a responsive embed page
       // https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/player-card
       // {
       //   hid: 'twitter:player',
       //   name: 'twitter:player',
       //   content: meta?.video,
       // },
+      {
+        hid: 'twitter:card',
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
     ]
 
     // only return non null, not undefined, not empty string
