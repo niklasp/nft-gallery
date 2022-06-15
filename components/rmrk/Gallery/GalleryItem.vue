@@ -224,12 +224,15 @@ export default class GalleryItem extends mixins(PrefixMixin) {
   }
 
   get image(): string {
-    return generateNftImage(
+    console.log('xxx', this.nft.name, this.meta.image, this.mimeType)
+    const tmpImage = generateNftImage(
       this.nft.name,
       formatBalanceEmptyOnZero(this.nft.price),
-      this.meta.image,
+      this.meta.image || `${this.$config.baseUrl}/k_card_mint.png`,
       this.mimeType
     )
+    console.log('xxx', tmpImage)
+    return tmpImage
   }
 
   async fetch() {

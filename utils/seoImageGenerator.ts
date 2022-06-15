@@ -8,7 +8,7 @@ export const generateNftImage = (
 ): string => {
   return `${URLS.koda.seoCard}${encodeURIComponent(
     name
-  )}.jpeg?price=${price}&image=${image}&mime=${mimeType}`
+  )}.jpeg?price=${price}&image=${image}&mime=${mimeType}&type=image.jpg`
 }
 
 export const generateCollectionImage = (
