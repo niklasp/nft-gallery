@@ -113,11 +113,13 @@ export default function ({ app }, inject): void {
         name: 'twitter:image',
         content: meta?.image || image,
       },
-      {
-        hid: 'twitter:player',
-        name: 'twitter:player',
-        content: meta?.video,
-      },
+      // here you should add a link to a route where the video is embedded
+      // https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/player-card
+      // {
+      //   hid: 'twitter:player',
+      //   name: 'twitter:player',
+      //   content: meta?.video,
+      // },
     ]
 
     // only return non null, not undefined, not empty string
